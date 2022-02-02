@@ -3,12 +3,12 @@ from db.run_sql import run_sql
 from models.artist import Artist
 
 def save(artist):
-    sql = f"INSERT INTO artists (name, year_formed) VALUES (%s, %s)"
+    sql = f"INSERT INTO artists (name, year_formed) VALUES (%s, %s) RETURNING *"
     values = [artist.name, artist.year_formed]
-    run_sql(sql, values)
-    # id = results[0]['id']
-    # artist.id = id
-    # return artist
+    results = run_sql(sql, values)
+    id = results[0]['id']
+    artist.id = id
+    return artist
 
 def delete_all():
     sql = "DELETE  FROM artists"

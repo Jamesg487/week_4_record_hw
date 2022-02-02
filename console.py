@@ -15,9 +15,9 @@ artist_repository.save(artist_1)
 artist_2 = Artist("Megadeath", 1983)
 artist_repository.save(artist_2)
 
-# album_1 = ("Atomic Heart Mother", "prog", artist_1)
-# album_repository.save(album_1)
+album_1 = ("Atomic Heart Mother", "prog", artist_1)
+album_repository.save(album_1)
 
-artist_repository.select(1)
+# artist_repository.select(1)
 
 pdb.set_trace()
